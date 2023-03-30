@@ -1,11 +1,13 @@
 /* --- DEBUG --- */
-div {
+/* div {
     border: 1px solid yellow;
-}
+} */
 
 /* --- HELPERS --- */
 
 .my_bg-lightblue {background-color: #165bba;}
+.my_bg-orange {background-color: #f2604b;}
+.my_color-grey {color: grey}
 
 /* --- GENERAL --- */
 
@@ -25,4 +27,8 @@ body {
     min-width: 8rem;
     height: calc(100vh - 3rem);
     background-color: darkblue;
+}
+
+thead > tr {
+    font-size: .75rem;
 }
