@@ -38,7 +38,7 @@
     <!-- *** MAIN *** -->
     <main>
       <div class="main-wrapper d-flex">
-        <div class="my_sidebar position-sticky start-0 d-flex flex-column justify-content-between align-items-center py-3 text-white">
+        <div class="my_sidebar d-flex flex-column justify-content-between align-items-center py-3 text-white">
           <nav>
             <p>icona <span class="d-none d-lg-inline-block">Home</span></p>
             <p>icona <span class="d-none d-lg-inline-block">Stats</span></p>
@@ -49,27 +49,19 @@
           </div>
         </div>
         <div class="my_main-content container-fluid">
-          <div class="row bg-primary text-white">
-            <div class="col-12 col-md-4 col-lg-6">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut ad, magni distinctio aspernatur amet dolore enim, voluptatibus praesentium quaerat harum ipsa fuga pariatur omnis esse. Aut cum fuga eius rerum.
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quo ad dolor, adipisci aperiam deleniti modi ipsa amet! Non, excepturi.
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 text-black">
-
+          <div class="row bg-primary text-white py-3">
+            <div class="col-12 col-md-4 col-lg-3 order-md-last">
               <!-- OFFCANVAS -->
-
-              <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNewStudent" aria-controls="offcanvasNewStudent">
-                ICONA
+              <button class="btn px-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNewStudent" aria-controls="offcanvasNewStudent">
+                Nuovo Studente <i class="fa-regular fa-square-plus"></i>
               </button>
               
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNewStudent" aria-labelledby="offcanvasNewStudentLabel">
                 <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNewStudentLabel">Inserisci un nuovo studente</h5>
+                  <h5 class="offcanvas-title text-black" id="offcanvasNewStudentLabel">Inserisci un nuovo studente</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body text-black">
                   <div>
                     <form action="#">
                       <div class="row">
@@ -133,7 +125,7 @@
                         <div class="row">
                           <div class="col-12">
                             <button type="submit" class="btn btn-primary">Salva</button>
-                            <button type="reset" class="btn btn-default pull-right">Svuota</button>
+                            <button type="reset" class="btn btn-default pull-right btn-warning">Svuota</button>
                           </div>
                         </div>
                       </div>
@@ -141,8 +133,24 @@
                   </div>
                 </div>
               </div>
-
-
+            </div>
+            <div class="col-12 col-md-4 col-lg-6">
+              <div class="d-flex align-items-center gap-1">
+                <h2>Boolean</h2>
+                <span class="badge text-white my_bg-lightblue rounded-3">Piano blaze</span>
+              </div>
+              <div class="d-flex align-items-center gap-1">
+                <span class="badge text-white my_bg-lightblue rounded-3">3 app</span>
+                <i class="fa-solid fa-angles-right"></i>
+                <span class="badge text-white my_bg-lightblue rounded-3 d-lg-none">+</span>
+                <span class="badge text-white my_bg-lightblue rounded-3 d-none d-lg-inline-block">Boolean mobile app</span>
+                <span class="badge text-white my_bg-lightblue rounded-3 d-none d-lg-inline-block">Boolean web app</span>
+                <span class="badge text-white my_bg-lightblue rounded-3 d-none d-lg-inline-block">Boolean blog app</span>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-around">
+              <span>Studenti online negli ultimi 30 minuti</span>
+              <span class="">125</span>
             </div>
           </div>
           <div class="row">
