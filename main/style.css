@@ -32,3 +32,7 @@ body {
 thead > tr {
     font-size: .75rem;
 }
+
+tr > td:first-child {
+    text-align: left;
+}
