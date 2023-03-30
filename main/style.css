@@ -1,8 +1,26 @@
+/* --- DEBUG --- */
+div {
+    border: 1px solid yellow;
+}
+
 /* --- HELPERS --- */
 
 /* --- GENERAL --- */
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* --- HEADER --- */
+
+.my_navbar {
+    height: 3rem;
+}
 
 /* --- MAIN --- */
 
+.my_sidebar {
+    min-width: 8rem;
+    height: calc(100vh - 3rem);
+    background-color: darkblue;
+}
