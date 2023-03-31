@@ -53,3 +53,14 @@ tr > td:first-child {
 i.fa-regular.fa-square-plus {
     -webkit-text-stroke: 2px #0d6efd;
 }
+
+/* --- HOVER --- */
+
+.my_sidebar div:hover {
+    box-shadow: 0 0 10px 5px rgba(256, 256, 256, 0.5) inset;
+}
+
+button[data-bs-toggle="offcanvas"] span:hover {
+    color: #051e34;
+    background-color: white;
+}

@@ -31,8 +31,15 @@
             <i class="fa-solid fa-circle-question"></i>
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
-          <div>
-            <i class="fa-solid fa-bell"></i>
+          <div class="nav-item dropstart">
+            <div class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-bell text-warning"></i>
+            </div>
+            <ul class="dropdown-menu mt-4">
+              <li><a class="dropdown-item" href="#">Profilo</a></li>
+              <li><a class="dropdown-item" href="#">Fatturazione</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -45,22 +52,21 @@
         <div class="my_sidebar d-flex flex-column justify-content-between align-items-center p-4 text-white my_bg-darkblue">
           <nav class="d-flex flex-column gap-3">
             <div class="d-flex align-items-center gap-1">
-              <i class="fa-solid fa-house fa-fw"></i>
-              <span class="d-none d-lg-inline-block ms-1">Home</span>
+              <i class="fa-solid fa-house fa-fw m-1"></i>
+              <span class="d-none d-lg-inline-block pe-4">Home</span>
             </div>
             <div class="d-flex align-items-center gap-1">
-              <i class="fa-solid fa-chart-simple fa-fw"></i> 
-              <span class="d-none d-lg-inline-block ms-1">Stats</span>
+              <i class="fa-solid fa-chart-simple fa-fw m-1"></i> 
+              <span class="d-none d-lg-inline-block pe-4">Stats</span>
             </div>
             <div class="d-flex align-items-center gap-1">
-              <i class="fa-solid fa-signal fa-fw"></i> 
-              <span class="d-none d-lg-inline-block ms-1">Signals</span>
+              <i class="fa-solid fa-signal fa-fw m-1"></i> 
+              <span class="d-none d-lg-inline-block pe-4">Signals</span>
             </div>
           </nav>
           <div class="d-flex align-items-center gap-1">
-            <p><i class="fa-solid fa-gear fa-fw"></i>
-              <span class="d-none d-lg-inline-block ms-1">Admin</span>
-            </p>
+            <i class="fa-solid fa-gear fa-fw m-1"></i>
+            <span class="d-none d-lg-inline-block pe-4">Admin</span>
           </div>
         </div>
         <div class="my_main-content container-fluid">
@@ -69,7 +75,7 @@
             <div class="col-12 col-md-4 col-lg-3 order-md-last">
               <!-- OFFCANVAS -->
               <button class="btn p-0 text-white d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNewStudent" aria-controls="offcanvasNewStudent">
-                Nuovo Studente <i class="fa-regular fa-square-plus fs-1 ms-2"></i>
+                Nuovo Studente <span class="border border-white rounded-1 px-2 fs-5 ms-2">+</span>
               </button>
               
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNewStudent" aria-labelledby="offcanvasNewStudentLabel">
@@ -193,15 +199,15 @@
                           <th scope="col" class="d-none d-md-table-cell">Data inizio</th>
                           <th scope="col" class="d-none d-md-table-cell">ROI</th>
                           <th scope="col">Stato</th>
-                          <th scope="col">Azioni</th>
+                          <th scope="col" class="">Azioni</th>
                         </tr>
                       <tbody>
                         <tr>                       
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-success">Done</span>
                           </td>
@@ -218,8 +224,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-success">Done</span>
                           </td>
@@ -236,8 +242,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-warning text-white">Process</span>
                           </td>
@@ -254,8 +260,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-success">Done</span>
                           </td>
@@ -272,8 +278,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-danger">Failed</span>
                           </td>
@@ -290,8 +296,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-success">Done</span>
                           </td>
@@ -308,8 +314,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-danger">Failed</span>
                           </td>
@@ -326,8 +332,8 @@
                           <td>
                             <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-success">Done</span>
                           </td>
