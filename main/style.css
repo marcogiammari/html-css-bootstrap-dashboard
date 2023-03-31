@@ -8,6 +8,7 @@
 .my_bg-lightblue {background-color: #165bba;}
 .my_bg-orange {background-color: #f2604b;}
 .my_color-grey {color: grey}
+.my_bg-darkblue {background-color: #051e34;}
 
 /* --- GENERAL --- */
 
@@ -18,15 +19,27 @@ body {
 /* --- HEADER --- */
 
 .my_navbar {
-    height: 3rem;
+    height: 4rem;
+}
+
+#mobile-logo {
+    height: 2.25rem;
 }
 
 /* --- MAIN --- */
 
 .my_sidebar {
-    min-width: 8rem;
-    height: calc(100vh - 3rem);
-    background-color: darkblue;
+    height: calc(100vh - 4rem);
+    background-image: url(/img/sidebar-bg.png);
+}
+
+.my_sidebar i {
+    font-size: 1rem;
+}
+
+.my_main-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 4rem);
 }
 
 thead > tr {
@@ -35,4 +48,8 @@ thead > tr {
 
 tr > td:first-child {
     text-align: left;
+}
+
+i.fa-regular.fa-square-plus {
+    -webkit-text-stroke: 2px #0d6efd;
 }

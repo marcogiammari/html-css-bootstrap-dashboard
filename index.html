@@ -17,8 +17,11 @@
     <header class="sticky-top">
       <nav class="my_navbar navbar bg-light">
         <div class="container-fluid flex-nowrap justify-content-start">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand d-none d-md-inline-block" href="#">
             <img class="img-fluid" src="img/logo.svg" alt="Logo">
+          </a>
+          <a class="navbar-brand" href="#">
+            <img id="mobile-logo" class="img-fluid d-md-none" src="img/mobile-logo.png" alt="Logo">
           </a>
           <form class="d-flex w-100" role="search">
             <input class="form-control me-2" type="search" placeholder="Prova a cercare Lezioni di Laravel" aria-label="Search">
@@ -39,14 +42,25 @@
     <main>
       <div class="main-wrapper d-flex">
         <!-- SIDEBAR -->
-        <div class="my_sidebar d-flex flex-column justify-content-between align-items-center py-3 text-white">
-          <nav>
-            <p>icona <span class="d-none d-lg-inline-block">Home</span></p>
-            <p>icona <span class="d-none d-lg-inline-block">Stats</span></p>
-            <p>icona <span class="d-none d-lg-inline-block">Signals</span></p>
+        <div class="my_sidebar d-flex flex-column justify-content-between align-items-center p-4 text-white my_bg-darkblue">
+          <nav class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-center gap-1">
+              <i class="fa-solid fa-house fa-fw"></i>
+              <span class="d-none d-lg-inline-block ms-1">Home</span>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+              <i class="fa-solid fa-chart-simple fa-fw"></i> 
+              <span class="d-none d-lg-inline-block ms-1">Stats</span>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+              <i class="fa-solid fa-signal fa-fw"></i> 
+              <span class="d-none d-lg-inline-block ms-1">Signals</span>
+            </div>
           </nav>
-          <div>
-            <p>icona <span class="d-none d-lg-inline-block">Admin</span></p>
+          <div class="d-flex align-items-center gap-1">
+            <p><i class="fa-solid fa-gear fa-fw"></i>
+              <span class="d-none d-lg-inline-block ms-1">Admin</span>
+            </p>
           </div>
         </div>
         <div class="my_main-content container-fluid">
@@ -54,8 +68,8 @@
           <div class="row bg-primary text-white py-3">
             <div class="col-12 col-md-4 col-lg-3 order-md-last">
               <!-- OFFCANVAS -->
-              <button class="btn px-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNewStudent" aria-controls="offcanvasNewStudent">
-                Nuovo Studente <i class="fa-regular fa-square-plus"></i>
+              <button class="btn p-0 text-white d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNewStudent" aria-controls="offcanvasNewStudent">
+                Nuovo Studente <i class="fa-regular fa-square-plus fs-1 ms-2"></i>
               </button>
               
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNewStudent" aria-labelledby="offcanvasNewStudentLabel">
@@ -66,69 +80,75 @@
                 <div class="offcanvas-body text-black">
                   <div>
                     <form action="#">
+
                       <div class="row">
-                        <div class="col-12 col-md-6 d-flex flex-column">
+                        <div class="col-12 col-md-6">
                           <label for="name">Nome</label>
                           <input type="text" class="form-control" id="name">                        
                         </div>
-                        <div class="col-12 col-md-6 d-flex flex-column">
+                        <div class="col-12 col-md-6">
                           <label for="surname">Cognome</label>
                           <input type="text" class="form-control" id="surname">                        
                         </div>                      
                       </div>
-                      <div class="row">
-                        <div class="col-12 col-md-6 d-flex flex-column">
-                          <label for="email">Email</label>
-                          <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="email" class="form-control" aria-describedby="basic-addon1">
+                      <div class="row my-3">
+                          <div class="col-12 col-md-6">
+                            <label for="email">Email</label>
+                            <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1">@</span>
+                              <input type="email" class="form-control" aria-describedby="basic-addon1">
                           </div>                        
                         </div>
-                        <div class="col-12 col-md-6 d-flex flex-column">
+                        <div class="col-12 col-md-6">
                           <label for="password">Password</label>
                           <input type="password" class="form-control" id="password">                        
                         </div>
-                        <div class="row">
-                          <div class="col-12 d-flex flex-column">
-                            <label for="address">Indirizzo</label>
-                            <input type="text" class="form-control" id="address">                        
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label for="address">Indirizzo</label>
+                          <input type="text" class="form-control" id="address">                        
+                        </div>
+                      </div>
+                      <div class="row my-3">
+                        <div class="col-12 col-md-6">
+                          <label for="city">Città</label>
+                          <input type="text" class="form-control" id="city">                        
+                        </div>              
+                        <div class="col-12 col-md-4">
+                          <label for="nation">Stato</label>
+                          <select class="form-select" id="nation">     
+                            <option selected>Scegli</option>
+                            <option value="italia">Italia</option>
+                            <option value="francia">Francia</option>
+                            <option value="germania">Germania</option>
+                          </select>                   
+                        </div>
+                        <div class="col-12 col-md-2">
+                          <label for="postal-code">CAP</label>
+                          <input type="number" class="form-control" id="postal-code">                        
+                        </div>                          
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <label for="input-photo">Foto</label>
+                          <input type="file" class="form-control" id="input-photo">
+                        </div>
+                      </div>
+                      <div class="row my-3">
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check-confirm">
+                            <label class="form-check-label" for="check-confirm">
+                              Seleziona per proseguire
+                            </label>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-12 col-md-6 d-flex flex-column">
-                            <label for="city">Città</label>
-                            <input type="text" class="form-control" id="city">                        
-                          </div>              
-                          <div class="col-12 col-md-4 d-flex flex-column">
-                            <label for="nation">Stato</label>
-                            <input type="text" class="form-control" id="nation">                        
-                          </div>
-                          <div class="col-12 col-md-2 d-flex flex-column">
-                            <label for="postal-code">CAP</label>
-                            <input type="number" class="form-control" id="postal-code">                        
-                          </div>                          
-                        </div>
-                        <div class="row">
-                          <div class="col-12 d-flex flex-column">
-                            <label for="inputGroupFile01">Foto</label>
-                            <input type="file" class="form-control" id="inputGroupFile01">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="check-confirm">
-                              <label class="form-check-label" for="check-confirm">
-                                Seleziona per proseguire
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Salva</button>
-                            <button type="reset" class="btn btn-default pull-right btn-warning">Svuota</button>
-                          </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-12">
+                          <button type="submit" class="btn btn-primary">Salva</button>
+                          <button type="reset" class="btn btn-default pull-right btn-warning">Svuota</button>
                         </div>
                       </div>
                     </form>
@@ -150,9 +170,9 @@
                 <span class="badge text-white my_bg-lightblue rounded-3 d-none d-lg-inline-block">Boolean blog app</span>
               </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-around">
+            <div class="col-12 col-md-4 col-lg-3 d-flex flex-column justify-content-center">
               <span>Studenti online negli ultimi 30 minuti</span>
-              <span class="">125</span>
+              <span class="fs-3">125</span>
             </div>
           </div>
 
@@ -169,7 +189,7 @@
                     <table class="table table-hover text-center">
                       <thead>
                         <tr>
-                          <th scope="col" class="text-start">Nome</th>
+                          <th scope="col" class="text-start w-50">Nome</th>
                           <th scope="col" class="d-none d-md-table-cell">Data inizio</th>
                           <th scope="col" class="d-none d-md-table-cell">ROI</th>
                           <th scope="col">Stato</th>
@@ -186,29 +206,11 @@
                             <span class="badge text-bg-success">Done</span>
                           </td>
                           <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
                             </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>                       
-                          <td>
-                            <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
-                          </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
-                          <td>
-                            <span class="badge text-bg-success">Done</span>
-                          </td>
-                          <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
-                            </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
                             </button>
                           </td>
                         </tr>
@@ -222,11 +224,29 @@
                             <span class="badge text-bg-success">Done</span>
                           </td>
                           <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
                             </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>                       
+                          <td>
+                            <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
+                          </td>
+                          <td>15 Feb 2021</td>
+                          <td>20%</td>
+                          <td>
+                            <span class="badge text-bg-warning text-white">Process</span>
+                          </td>
+                          <td>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
+                            </button>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
                             </button>
                           </td>
                         </tr>
@@ -240,11 +260,29 @@
                             <span class="badge text-bg-success">Done</span>
                           </td>
                           <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
                             </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>                       
+                          <td>
+                            <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
+                          </td>
+                          <td>15 Feb 2021</td>
+                          <td>20%</td>
+                          <td>
+                            <span class="badge text-bg-danger">Failed</span>
+                          </td>
+                          <td>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
+                            </button>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
                             </button>
                           </td>
                         </tr>
@@ -258,11 +296,29 @@
                             <span class="badge text-bg-success">Done</span>
                           </td>
                           <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
                             </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>                       
+                          <td>
+                            <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
+                          </td>
+                          <td>15 Feb 2021</td>
+                          <td>20%</td>
+                          <td>
+                            <span class="badge text-bg-danger">Failed</span>
+                          </td>
+                          <td>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
+                            </button>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
                             </button>
                           </td>
                         </tr>
@@ -276,47 +332,11 @@
                             <span class="badge text-bg-success">Done</span>
                           </td>
                           <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-pen fa-fw"></i>
                             </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>                       
-                          <td>
-                            <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
-                          </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
-                          <td>
-                            <span class="badge text-bg-success">Done</span>
-                          </td>
-                          <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
-                            </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>                       
-                          <td>
-                            <span class="rounded-circle my_bg-orange text-white p-1"><i class="fa-solid fa-code"></i></span> Classe 75
-                          </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
-                          <td>
-                            <span class="badge text-bg-success">Done</span>
-                          </td>
-                          <td>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-pen"></i>
-                            </button>
-                            <button class="btn my_color-grey border-secondary">
-                              <i class="fa-solid fa-trash"></i>
+                            <button class="btn my_color-grey border-secondary px-2">
+                              <i class="fa-solid fa-trash fa-fw"></i>
                             </button>
                           </td>
                         </tr>
@@ -332,11 +352,11 @@
                     <div class="accordion" id="accordionFaq">
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Come aggiungere un nuovo studente?
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Come posso accedere alle informazioni del mio account?
                           </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
                           <div class="accordion-body">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque facere maxime, repellendus inventore nisi ut exercitationem praesentium laborum nulla deleniti quis voluptatem voluptate nam repellat cumque et magnam, quibusdam aperiam!
                           </div>
