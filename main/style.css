@@ -64,3 +64,12 @@ button[data-bs-toggle="offcanvas"] span:hover {
     color: #051e34;
     background-color: white;
 }
+
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (min-width: 992px) {
+    .my_offcanvas {
+        width: 50% !important;
+    }
+}
