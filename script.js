@@ -10,12 +10,7 @@ new Chart(ctx, {
       data: [12, 19, 3, 5, 2],
       borderWidth: 1
     }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
   }
 });
+
+
